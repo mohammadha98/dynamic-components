@@ -1,0 +1,27 @@
+@import url(forget-password-newpass.css);
+@import url(font.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: kalameh
+
+  }
+  html{
+    overflow-x: hidden;
+  }
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  p{
+    margin: 0;
+  }
+  h3{
+    margin: 0;
+  }

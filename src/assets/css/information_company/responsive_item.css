@@ -1,0 +1,110 @@
+@media only screen and (min-width: 700px){
+    .style_row_table td{
+        padding-left: 60px;
+     }
+}
+@media only screen and (min-width: 900px ){
+        .style_row_table td{
+        padding-left: 33px;
+     }
+     .Registration button{
+        width: auto;
+          font-size: 16px;
+     }
+     .section_two h5{
+        font-size: 14px;
+        font-weight: 900;
+     }
+     .test3 input{
+        height: auto !important;
+     }
+     .Explanations input{
+        height: 121px;
+     }
+}
+@media only screen and (min-width: 1080px){
+    .style_row_table td{
+        padding-left: 15px;
+
+    }
+    .box_problem_statement{
+        font-size: 12px;
+    }
+    .section_2_3_4 button{
+        width: 96px;
+        padding:4px 10px;
+    }
+    .section_six input{
+        flex: 1 1 70%;
+    }
+    aside{
+        display: flex;
+    }
+    .title_section_issues h3{
+        font-size: 18px;
+    }
+    .responsive_dashbord_mobile{
+        display: none;
+    }
+    .content_issues{
+        display: table;
+        width: 100%;
+    }
+    header{
+        position: unset;
+        box-shadow: none;
+        padding: 42px 30px 0;
+        height: auto;
+    }
+    .left_content_body{
+        padding-top: 42px;
+    }
+    .left_content header h3{
+        display: block;
+    }
+    .left_content header p {
+        display: block;
+    }
+    .title_header_and_icons img{
+        display: none;
+    }
+    .responsive_icon_header{
+        display: inline;
+    }
+    .responsive_title{
+        display: none;
+    }
+    .status_problem{
+        display: flex;
+    }
+    .left_content_body {
+        gap: 18px;
+    }
+    .section_2_3_4 label{
+        word-spacing: normal;
+    }
+}
+@media only screen and (min-width: 1280px) {
+
+    .style_row_table td{
+        padding-left: 47px ;
+    }
+    .title_section_issues div > :last-child{
+      font-size: 12px;
+      padding: 12px 32px;
+      flex-direction: row;
+
+    }
+}
+
+
+@media only screen and (min-width: 1440px){
+    .style_row_table td{
+        padding-left: 74px ;
+    }
+
+}
+
+
+
+

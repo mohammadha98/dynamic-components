@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: kalameh;
+    direction: rtl;
+  }
+  html{
+    overflow-x: hidden;
+  }
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  p{
+    margin: 0;
+  }
+  h3{
+    margin: 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 2rem;
+  
+  }
+  
+  form {
+    margin-top: 1rem;
+    padding: 20px;
+  }

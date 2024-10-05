@@ -1,0 +1,62 @@
+menu{
+    display: flex;
+    height: 92px;
+    background-color: #E2DACA;
+    width: 100%;
+    padding: 0 24px;
+    align-items: center;
+justify-content: space-between;
+}
+menu img{
+height: 48px;
+display: none;
+}
+menu div{
+    display: none;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+    color: #3E5063;
+max-width: 574px;
+flex-grow: 1;
+}
+menu button{
+    padding:8px 28px;
+    border-radius: 6px;
+    display: flex;
+    gap: 8px;
+    border: none;
+    background-color: #3E5063;
+    font-size: 12px;
+    font-weight: 500;
+    color: #FFFFFF;
+    min-width: 152px;
+    align-items: center;
+
+}
+menu button svg{
+    width: 18px;
+}
+@media only screen and (min-width: 1080px){
+    menu button{
+        padding: 12px 48px;
+        min-width: 221px;
+        font-size: 16px;
+        font-weight: 800;
+    }
+    menu button svg{
+        width: auto;
+    }
+    menu>:first-child{
+        display: none;
+    }
+    menu img{
+        display: inline;
+    }
+    menu div{
+        display: flex;
+    }
+    menu{
+        padding: 0 120px;
+    }
+}

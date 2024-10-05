@@ -1,0 +1,64 @@
+<!-- src/app/components/dynamic-table/table.component.html -->
+<div class="table-responsive">
+    <h3>{{ config.tableTitle }}</h3>
+  
+    <!-- بخش جستجو -->
+    <div *ngIf="config.search" class="mb-3">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="onSearchChange()"
+        placeholder="جستجو..."
+        class="form-control"
+      />
+    </div>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th *ngFor="let column of columns" (click)="sortData(column)" style="cursor: pointer;">
+            {{ column | titlecase }}
+            <span *ngIf="config.pagination && column">{{ '🔽' }}</span>
+          </th>
+          <th *ngIf="config.actions?.length">عملیات</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of displayedData">
+          <td *ngFor="let column of columns">
+            {{ row[column] }}
+          </td>
+          <td *ngIf="config.actions?.length">
+            <button
+              *ngFor="let action of config.actions"
+              (click)="executeAction(action.actionKey, row)"
+              [ngClass]="action.class"
+              class="me-2"
+            >
+              <i *ngIf="action.icon" [ngClass]="action.icon"></i> {{ action.label }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- بخش صفحه‌بندی -->
+    <nav *ngIf="config.pagination && totalPages > 1">
+      <ul class="pagination">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <a class="page-link" (click)="goToPage(currentPage - 1)">قبلی</a>
+        </li>
+        <li
+          class="page-item"
+          *ngFor="let page of [].constructor(totalPages); let i = index"
+          [class.active]="currentPage === i + 1"
+        >
+          <a class="page-link" (click)="goToPage(i + 1)">{{ i + 1 }}</a>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <a class="page-link" (click)="goToPage(currentPage + 1)">بعدی</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  

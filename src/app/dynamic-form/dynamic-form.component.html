@@ -1,0 +1,65 @@
+<div class="container">
+  <h3>{{ form().formTitle }}</h3>
+  <form #ngForm="ngForm" [formGroup]="dynamicFormGroup" (onSubmit)="onSubmit()" class="row g-3">
+    @for (control of form().formControls; track control.name) {
+      <ng-container>
+        @if (['text', 'email', 'password', 'number', 'date'].includes(control.type)) {
+          <div [class]="control.class">
+            <label class="form-label">{{ control.label }}</label>
+            <input class="form-control" [type]="control.type" [formControlName]="control.name">
+            <small class="text-danger">{{ getValidatorError(control) }}</small>
+          </div>
+        }
+        @if (control.type === 'select') {
+          <div [class]="control.class">
+            <label class="form-label">{{ control.label }}</label>
+            <select [formControlName]="control.name" class="form-select" aria-label="Default select">
+              <option selected>Select</option>
+              @for (option of control.options; track option.id) {
+                <ng-container>
+                  <option value="{{option.value}}">{{ option.value }}</option>
+                </ng-container>
+              }
+            </select>
+            <small class="text-danger">{{ getValidatorError(control) }}</small>
+          </div>
+        }
+
+        @if (control.type === 'radio') {
+          <div [class]="control.class">
+            <label class="form-label">{{ control.label }}</label>
+            @for (option of control.radioOptions; track option) {
+              <ng-container>
+                <div class="form-check">
+                  <input type="radio" [formControlName]="control.name" [value]="option" class="form-check-input">
+                  <label class="form-check-label" [for]="control?.name"> {{ option }}</label>
+                </div>
+              </ng-container>
+            }
+            <small class="text-danger">{{ getValidatorError(control) }}</small>
+          </div>
+        }
+
+        @if (control.type === 'textarea') {
+          <div [class]="control.class">
+            <ng-container>
+              <label class="form-label">{{ control.label }}</label>
+              <textarea [formControlName]="control.name" class="form-control"
+                        rows="3"></textarea>
+            </ng-container>
+            <small class="text-danger">{{ getValidatorError(control) }}</small>
+          </div>
+        }
+
+      </ng-container>
+    }
+
+    <div class="col-12">
+      <button (click)="onSubmit()" type="submit" class="btn btn-primary mx-2"
+              [disabled]="ngForm.invalid">{{ form().saveBtnTitle }}
+      </button>
+      <button (click)="resetForm()" class="btn btn-danger mx-2">{{ form().resetBtnTitle }}</button>
+    </div>
+  </form>
+</div>
+

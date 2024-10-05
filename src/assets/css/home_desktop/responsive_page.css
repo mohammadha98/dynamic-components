@@ -1,0 +1,67 @@
+@media only screen and (min-width: 660px){
+
+    header{
+        flex-direction: row !important;
+        gap: 0 !important;
+        padding: 82px 80px 102px !important ;
+    }
+    .content_issues>div {
+        width: 288px !important;
+    }
+    .new_issues{
+        padding:0 74px !important; 
+    }
+    .should_be_something{
+     padding: 0 74px !important;     
+    }
+    .container_section div{
+        width: 288px !important;
+    }
+    
+}
+@media only screen and (min-width: 860px){
+
+}
+@media only screen and (min-width: 1080px){
+    header>:first-child h5{
+        font-size: 32px !important;
+    }
+    header>:first-child p{
+        font-size: 16.8px !important;
+        font-weight: 500 !important;
+    }
+    .title_new_issues h3{
+        font-size: 32px !important;
+    }
+    .title_new_issues p {
+        font-size: 16px !important;
+        font-weight: 600 !important;}
+    header img{
+        height: 392px !important;
+    }
+    header{
+        padding: 82px 120px 102px !important;
+    }
+    .title_section h3{
+        font-size: 32px !important;
+    }
+    .title_section p{
+        font-size: 16.8px !important;
+        font-weight: 500 !important;
+    }
+    .container_section div svg{
+        width: 37.63px !important;
+        }
+        .container_section div h5{
+            font-size: 18px !important;
+            font-weight: 900 !important;
+        }
+        .container_section div p{
+            font-size: 12px !important;
+            font-weight: 800 !important;
+        }
+        main{
+            gap: 140px !important;
+            padding-top: 140px !important;
+        }
+}
